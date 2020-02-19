@@ -1,4 +1,3 @@
-import * as uuid from 'uuid';
 import * as https from 'https';
 
 const launcherUID = '3db50481-84f6-4060-9439-42b78ac1b62c';
