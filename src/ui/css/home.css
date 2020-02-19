@@ -1,0 +1,227 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body * {
+    margin: 0;
+    padding: 0;
+}
+
+.with-ripple-effect {
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes ripple {
+    to {
+        opacity: 0.0;
+        transform: scale(3.0);
+    }
+}
+
+.ripple {
+    position: absolute;
+    background-color: lightgray;
+    border-radius: 50%;
+    opacity: 1.0;
+    transform: scale(0.0);
+    animation: ripple 0.5s linear;
+}
+
+#menu-bar {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    height: 90px;
+    box-shadow: 0px 3px 3px gray;
+}
+
+#menu-bar div {
+    display: inline-block;
+    width : 50px;
+    height: 50px;
+    margin: 20px;
+    background-size: cover;
+    transform: scale(0.8);
+    border-bottom-width: 3px;
+    border-bottom-color: transparent;
+    border-bottom-style: solid;
+    transition: all 0.4s ease;
+
+}
+
+#menu-bar div.selected-menu-button {
+    transform: scale(1.0);
+    border-bottom-color: blue;
+}
+
+#info-button {background-image: url(../image/info.svg);}
+#home-button {background-image: url(../image/home.svg);}
+#settings-button {background-image: url(../image/settings.svg);}
+
+#menu-bar div:hover {
+    transform: scale(1.0);
+    border-bottom-color: aquamarine;
+}
+
+#body {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    top: 90px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    align-items: center;
+}
+
+#account-bar {
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    height: 100%;
+    box-shadow: 5px 0px 3px gray;
+}
+
+#account-bar input {
+    width: 100%;
+    height: 50px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    background-image: linear-gradient(to right bottom, cornflowerblue, pink);
+    text-align: center;
+    transform: scale(0.95);
+}
+
+#ac-email {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+#ac-password {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#login-button {
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+    height: 50px;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    background-image: linear-gradient(to right bottom, lightblue, pink);
+}
+
+#account-icon {
+    position: absolute;
+    width: 128px;
+    height: 128px;
+    top: 36px;
+    left: 36px;
+    z-index: 1;
+    opacity: 1.0;
+    transition: opacity 0.3s linear;
+    image-rendering: pixelated;
+    background-size: cover;
+}
+
+#account-icon:hover {
+    opacity: 0.0;
+}
+
+#account-icon-contents::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    image-rendering: pixelated;
+    background-size: 100%;
+    z-index: -1;
+    filter: blur(15px) brightness(170%);
+}
+
+#account-icon-contents {
+    display: flex;
+    position: absolute;
+    width: 128px;
+    height: 128px;
+    top: 36px;
+    left: 36px;
+    align-items: center;
+}
+
+#account-icon-contents div {
+    text-align: center;
+}
+
+#account-icon-contents div p {
+    word-wrap: break-word;
+}
+
+#user-name {
+    font-size: larger;
+}
+
+#user-addr {
+    font-size: x-small;
+}
+
+#add-button {
+    position: absolute;
+    bottom: 10%;
+    right: 5%;
+    border-radius: 50%;
+    background-color: aquamarine;
+    width: 70px;
+    height: 70px;
+    box-shadow: 5px 5px 10px 3px gray;
+    background-image: url(../image/add.svg);
+    background-size: cover;
+}
+
+#versions-bar {
+    position: absolute;
+    top: 180px;
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+}
+
+#versions-bar option {
+    width: 70px;
+    border-radius: 10px;
+}
+
+#content-block {
+    position: relative;
+    display: inline-block;
+    width: 800;
+    height: 100%;
+    box-shadow: 5px 0px 3px gray;
+    overflow-y: scroll;
+}
+
+.version-item {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    word-wrap: break-word;
+    width: 100px;
+    height: 100px;
+    background-image: linear-gradient(to right bottom, aqua, pink);
+    box-shadow: 3px 3px 3px darkgray;
+    border-radius: 10px;
+    margin: 14px;
+    user-select: none;
+    transition: transform 0.2s linear;
+}
+
+.version-item:hover {
+    transform: rotateX(30deg);
+}

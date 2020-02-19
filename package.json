@@ -1,0 +1,25 @@
+{
+  "name": "ghostz-launcher",
+  "version": "1.0.0",
+  "description": "一个Minecraft启动器。",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:MessyGhost/Ghost-s-Launcher.git"
+  },
+  "main": "./out/main.js",
+  "scripts": {
+    "test": "electron .",
+    "pretest": "tsc -p ./",
+    "compile": "tsc -p ./"
+  },
+  "devDependencies": {
+    "adm-zip": "0.4.14",
+    "electron": "8.0.1",
+    "typescript": "3.7.5"
+  },
+  "author": "Messy_Ghost",
+  "license": "BSD",
+  "dependencies": {
+    "@types/adm-zip": "^0.4.32"
+  }
+}
