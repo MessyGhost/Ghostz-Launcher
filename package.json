@@ -14,7 +14,7 @@
   },
   "devDependencies": {
     "adm-zip": "0.4.14",
-    "electron": "8.0.1",
+    "electron": "8.2.4",
     "typescript": "3.7.5"
   },
   "author": "Messy_Ghost",
